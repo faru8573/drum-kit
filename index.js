@@ -67,6 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function buttonAnimation(letter){
         var activeBtn = document.querySelector("."+letter)
-        activeBtn.classList.toggle("pressed")
+        activeBtn.classList.toggle("pressed");
+          setTimeout(function(){
+            activeBtn.classList.remove("pressed");
+        },1000)
     }
 })
