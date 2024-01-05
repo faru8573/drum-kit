@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var buttonText = this.innerHTML;
             console.log(buttonText);
             playSoundByKey(buttonText)
+            buttonAnimation(buttonText)
         });
     }
 
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("keydown", function (event) {
         var key = event.key;
         playSoundByKey(key);
+        buttonAnimation(key)
     })
 
     function playSoundByKey(letter) {
@@ -61,5 +63,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function playSound(source) {
         var audio = new Audio(source)
         audio.play();
+    }
+
+    function buttonAnimation(letter){
+        var activeBtn = document.querySelector("."+letter)
+        activeBtn.classList.toggle("pressed")
     }
 })
